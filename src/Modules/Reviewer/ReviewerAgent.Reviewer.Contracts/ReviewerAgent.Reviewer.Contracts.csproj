@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\ReviewerAgent.SharedKernel\ReviewerAgent.SharedKernel.csproj" />
+    <ProjectReference Include="..\..\PromptManager\ReviewerAgent.PromptManager.Contracts\ReviewerAgent.PromptManager.Contracts.csproj" />
+    <ProjectReference Include="..\..\ContextBuilder\ReviewerAgent.ContextBuilder.Contracts\ReviewerAgent.ContextBuilder.Contracts.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

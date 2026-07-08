@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\ReviewerAgent.SharedKernel\ReviewerAgent.SharedKernel.csproj" />
+    <ProjectReference Include="..\..\RepoConnector\ReviewerAgent.RepoConnector.Contracts\ReviewerAgent.RepoConnector.Contracts.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

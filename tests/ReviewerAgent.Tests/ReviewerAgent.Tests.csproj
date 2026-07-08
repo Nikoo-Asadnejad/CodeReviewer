@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.7.0" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="10.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Modules\RepoConnector\ReviewerAgent.RepoConnector.Contracts\ReviewerAgent.RepoConnector.Contracts.csproj" />
+    <ProjectReference Include="..\..\src\Modules\RepoConnector\ReviewerAgent.RepoConnector\ReviewerAgent.RepoConnector.csproj" />
+    <ProjectReference Include="..\..\src\Modules\TaskConnector\ReviewerAgent.TaskConnector\ReviewerAgent.TaskConnector.csproj" />
+    <ProjectReference Include="..\..\src\Modules\LlmConnector\ReviewerAgent.LlmConnector\ReviewerAgent.LlmConnector.csproj" />
+    <ProjectReference Include="..\..\src\Modules\CodeScanner\ReviewerAgent.CodeScanner\ReviewerAgent.CodeScanner.csproj" />
+    <ProjectReference Include="..\..\src\Modules\TaskManager\ReviewerAgent.TaskManager\ReviewerAgent.TaskManager.csproj" />
+    <ProjectReference Include="..\..\src\Modules\ContextBuilder\ReviewerAgent.ContextBuilder\ReviewerAgent.ContextBuilder.csproj" />
+    <ProjectReference Include="..\..\src\Modules\PromptManager\ReviewerAgent.PromptManager\ReviewerAgent.PromptManager.csproj" />
+    <ProjectReference Include="..\..\src\Modules\Reviewer\ReviewerAgent.Reviewer\ReviewerAgent.Reviewer.csproj" />
+    <ProjectReference Include="..\..\src\Modules\CommentGenerator\ReviewerAgent.CommentGenerator\ReviewerAgent.CommentGenerator.csproj" />
+    <ProjectReference Include="..\..\src\Modules\Rules\ReviewerAgent.Rules\ReviewerAgent.Rules.csproj" />
+    <ProjectReference Include="..\..\src\Shared\ReviewerAgent.SharedKernel\ReviewerAgent.SharedKernel.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,11 @@
+# Secrets — never commit. Use User Secrets for local dev (see docs/CONFIGURATION.md).
+# Any local env files used for `docker run --env-file` must stay out of source control.
+*.env
+.env
+
+# Build output
+bin/
+obj/
+
+# IDE
+.vs/

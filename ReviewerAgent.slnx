@@ -1,0 +1,53 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Host/">
+    <Project Path="src/Host/ReviewerAgent.Host/ReviewerAgent.Host.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/CodeScanner/">
+    <Project Path="src/Modules/CodeScanner/ReviewerAgent.CodeScanner.Contracts/ReviewerAgent.CodeScanner.Contracts.csproj" />
+    <Project Path="src/Modules/CodeScanner/ReviewerAgent.CodeScanner/ReviewerAgent.CodeScanner.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/CommentGenerator/">
+    <Project Path="src/Modules/CommentGenerator/ReviewerAgent.CommentGenerator.Contracts/ReviewerAgent.CommentGenerator.Contracts.csproj" />
+    <Project Path="src/Modules/CommentGenerator/ReviewerAgent.CommentGenerator/ReviewerAgent.CommentGenerator.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/ContextBuilder/">
+    <Project Path="src/Modules/ContextBuilder/ReviewerAgent.ContextBuilder.Contracts/ReviewerAgent.ContextBuilder.Contracts.csproj" />
+    <Project Path="src/Modules/ContextBuilder/ReviewerAgent.ContextBuilder/ReviewerAgent.ContextBuilder.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/LlmConnector/">
+    <Project Path="src/Modules/LlmConnector/ReviewerAgent.LlmConnector.Contracts/ReviewerAgent.LlmConnector.Contracts.csproj" />
+    <Project Path="src/Modules/LlmConnector/ReviewerAgent.LlmConnector/ReviewerAgent.LlmConnector.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/PromptManager/">
+    <Project Path="src/Modules/PromptManager/ReviewerAgent.PromptManager.Contracts/ReviewerAgent.PromptManager.Contracts.csproj" />
+    <Project Path="src/Modules/PromptManager/ReviewerAgent.PromptManager/ReviewerAgent.PromptManager.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/RepoConnector/">
+    <Project Path="src/Modules/RepoConnector/ReviewerAgent.RepoConnector.Contracts/ReviewerAgent.RepoConnector.Contracts.csproj" />
+    <Project Path="src/Modules/RepoConnector/ReviewerAgent.RepoConnector/ReviewerAgent.RepoConnector.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Reviewer/">
+    <Project Path="src/Modules/Reviewer/ReviewerAgent.Reviewer.Contracts/ReviewerAgent.Reviewer.Contracts.csproj" />
+    <Project Path="src/Modules/Reviewer/ReviewerAgent.Reviewer/ReviewerAgent.Reviewer.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Rules/">
+    <Project Path="src/Modules/Rules/ReviewerAgent.Rules.Contracts/ReviewerAgent.Rules.Contracts.csproj" />
+    <Project Path="src/Modules/Rules/ReviewerAgent.Rules/ReviewerAgent.Rules.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/TaskConnector/">
+    <Project Path="src/Modules/TaskConnector/ReviewerAgent.TaskConnector.Contracts/ReviewerAgent.TaskConnector.Contracts.csproj" />
+    <Project Path="src/Modules/TaskConnector/ReviewerAgent.TaskConnector/ReviewerAgent.TaskConnector.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/TaskManager/">
+    <Project Path="src/Modules/TaskManager/ReviewerAgent.TaskManager.Contracts/ReviewerAgent.TaskManager.Contracts.csproj" />
+    <Project Path="src/Modules/TaskManager/ReviewerAgent.TaskManager/ReviewerAgent.TaskManager.csproj" />
+  </Folder>
+  <Folder Name="/src/Shared/">
+    <Project Path="src/Shared/ReviewerAgent.SharedKernel/ReviewerAgent.SharedKernel.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ReviewerAgent.Tests/ReviewerAgent.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <!-- Enables `dotnet user-secrets` and, in the Development environment, the User Secrets
+         configuration provider. Local secrets are stored in the user profile, never in the repo. -->
+    <UserSecretsId>reviewer-agent-host</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.9" />
+    <PackageReference Include="Seq.Extensions.Logging" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <!-- Ship the Markdown rule documents next to the binary so the default
+         Rules folder resolves at runtime in any environment. -->
+    <Content Include="..\..\..\Rules\*.md" Link="Rules\%(Filename)%(Extension)">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\RepoConnector\ReviewerAgent.RepoConnector\ReviewerAgent.RepoConnector.csproj" />
+    <ProjectReference Include="..\..\Modules\TaskConnector\ReviewerAgent.TaskConnector\ReviewerAgent.TaskConnector.csproj" />
+    <ProjectReference Include="..\..\Modules\LlmConnector\ReviewerAgent.LlmConnector\ReviewerAgent.LlmConnector.csproj" />
+    <ProjectReference Include="..\..\Modules\CodeScanner\ReviewerAgent.CodeScanner\ReviewerAgent.CodeScanner.csproj" />
+    <ProjectReference Include="..\..\Modules\TaskManager\ReviewerAgent.TaskManager\ReviewerAgent.TaskManager.csproj" />
+    <ProjectReference Include="..\..\Modules\ContextBuilder\ReviewerAgent.ContextBuilder\ReviewerAgent.ContextBuilder.csproj" />
+    <ProjectReference Include="..\..\Modules\PromptManager\ReviewerAgent.PromptManager\ReviewerAgent.PromptManager.csproj" />
+    <ProjectReference Include="..\..\Modules\Reviewer\ReviewerAgent.Reviewer\ReviewerAgent.Reviewer.csproj" />
+    <ProjectReference Include="..\..\Modules\CommentGenerator\ReviewerAgent.CommentGenerator\ReviewerAgent.CommentGenerator.csproj" />
+    <ProjectReference Include="..\..\Modules\Rules\ReviewerAgent.Rules\ReviewerAgent.Rules.csproj" />
+    <ProjectReference Include="..\..\Shared\ReviewerAgent.SharedKernel\ReviewerAgent.SharedKernel.csproj" />
+  </ItemGroup>
+
+</Project>

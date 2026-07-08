@@ -1,0 +1,9 @@
+<Project>
+
+  <!-- Expose module internals to the test assembly so implementations can be unit-tested
+       without widening their visibility (the public surface stays the *.Contracts projects). -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="ReviewerAgent.Tests" />
+  </ItemGroup>
+
+</Project>
