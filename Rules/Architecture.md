@@ -6,3 +6,5 @@
 - Watch for layer/boundary violations, leaking implementation types across modules, and bidirectional coupling.
 - Flag high coupling and low cohesion: a type doing unrelated jobs, or a change that forces edits across many modules.
 - New external integrations (repo/task/LLM providers) must be added behind their factory, not by editing existing call sites.
+- Define rich domain models, follow encapsulation rules. define fine aggregates 
+- Follow clean architecture rules dependecies should be infrastructure-->application-->domain
