@@ -6,3 +6,72 @@
 - Watch for layer/boundary violations, leaking implementation types across modules, and bidirectional coupling.
 - Flag high coupling and low cohesion: a type doing unrelated jobs, or a change that forces edits across many modules.
 - New external integrations (repo/task/LLM providers) must be added behind their factory, not by editing existing call sites.
+- Follow Clean Architecture Dependencies must always point inward: Infrastructure → Application → Domain.
+- The Domain layer must not depend on Application, Infrastructure, UI, databases, frameworks, or external services.
+- The Application layer may depend only on Domain abstractions and contracts, never on Infrastructure implementations.
+- The Infrastructure layer implements interfaces defined in Application or Domain.
+- No circular dependencies between layers or modules are allowed.
+- Cross-module dependencies must go through Contracts projects or explicitly defined interfaces.
+- Each module must be self-contained, owning its domain logic, application services, persistence, and infrastructure adapters.
+- Modules may expose only public contracts (DTOs, events, interfaces) through *.Contracts.
+- Internal implementation types must not leak outside the module.
+- Shared code must be limited to truly cross-cutting concerns, not business logic.
+- Avoid creating a “Shared” project that becomes a dumping ground for unrelated utilities.
+- The Domain layer must contain entities, value objects, aggregates, domain events, domain services, and business rules.
+- Domain entities must protect their invariants through encapsulation.
+- Public setters on entities should be avoided unless required by the ORM.
+- Business rules must not be duplicated across Application or Infrastructure layers.
+- Domain logic must be framework-independent and persistence-ignorant.
+- Value objects must be immutable and compared by value.
+- Aggregates must be modified only through their aggregate root.
+- Define clear aggregate roots and enforce transactional consistency within an aggregate.
+- Aggregates should be small and focused; avoid large “god aggregates”.
+- References between aggregates should use identifiers, not direct object references.
+- Cross-aggregate coordination should occur through domain events or application orchestration.
+- A single transaction should normally modify only one aggregate root.
+- The Application layer coordinates use cases, workflows, transactions, and authorization.
+- It must not contain core business rules that belong in the Domain.
+- Application services should depend on interfaces, not concrete implementations.
+- Commands and queries should be separated when using CQRS.
+- Application DTOs must not expose Domain entities directly.
+- Application services should be thin orchestration layers, not repositories of business logic.
+- Infrastructure contains persistence, messaging, caching, file storage, external APIs, and framework-specific code.
+- Infrastructure must implement interfaces defined in Domain or Application.
+- Infrastructure types must not leak into Domain or Application.
+- Database configuration, EF Core mappings, and repositories belong in Infrastructure.
+- External integrations must be isolated behind adapters or gateways.
+- All cross-module and cross-layer dependencies must be resolved through Dependency Injection.
+- Avoid the Service Locator pattern.
+- Prefer constructor injection over property injection.
+- Register interfaces with their implementations in a centralized composition root.
+- Domain events represent facts that have already happened in the domain.
+- They must be raised inside the Domain layer and handled in Application or Infrastructure.
+- Domain event handlers should be idempotent where possible.
+- Cross-module communication should prefer events over direct service calls when eventual consistency is acceptable.
+- Event payloads should contain only the data needed by consumers.
+- Repositories should be defined as interfaces in Domain or Application and implemented in Infrastructure.
+- Repositories should operate on aggregate roots, not arbitrary entities.
+- Repositories should not expose ORM-specific query APIs to higher layers.
+- Complex queries should be handled through dedicated query services or read models.
+- Commands must change state; queries must not change state.
+- Query models may be optimized for reads and do not need to mirror domain models.
+- Read models must not bypass domain rules when performing writes.
+- Transaction boundaries should align with aggregate boundaries.
+- Use eventual consistency for cross-aggregate or cross-module workflows when possible.
+- APIs must expose DTOs, never Domain entities.
+- Validation should occur at the boundary and be enforced again by Domain invariants.
+- Fluent Validation should be implemented in API layer.
+- API controllers should remain thin and delegate to Application services.
+- Names must reflect the ubiquitous language of the domain.
+- Avoid technical or generic names such as Manager, Helper, or Util when a domain-specific name exists.
+- Folder and namespace structure should mirror bounded contexts and layers.
+- One class should have one clear responsibility.
+- Prefer high cohesion within a module and low coupling between modules.
+- Domain logic must be testable without Infrastructure.
+- Application services should be tested with mocked interfaces.
+- Infrastructure integrations should have integration tests.
+- Avoid tests that depend on global state or static singletons.
+- New providers must be added through an extensible factory or strategy pattern.
+- Retry, timeout, circuit breaker, and fallback policies must be considered for remote calls.
+- All external systems must be accessed through abstaction (interface)(adapters).
+- Business logic should not leak into controllers, repositories, or Infrastructure.

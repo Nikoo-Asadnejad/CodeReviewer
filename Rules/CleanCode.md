@@ -13,3 +13,5 @@
 - wrap conditions in meaningful method or variable.
 - no method should have more than 5 parameter.
 - Classes should be short and single-purpose avoid long classes which handles every thing always  follow SRP.
+- Perefer sealed Records in API Request/Response or DTOs.
+
