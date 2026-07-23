@@ -75,3 +75,5 @@
 - Retry, timeout, circuit breaker, and fallback policies must be considered for remote calls.
 - All external systems must be accessed through abstaction (interface)(adapters).
 - Business logic should not leak into controllers, repositories, or Infrastructure.
+- Define rich domain models, follow encapsulation rules. define fine aggregates 
+- Follow clean architecture rules dependecies should be infrastructure-->application-->domain
